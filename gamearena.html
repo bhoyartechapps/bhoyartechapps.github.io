@@ -81,6 +81,10 @@
             font-size: 14px;
             opacity: 0.75;
         }
+
+        .buttons.hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -88,28 +92,28 @@
 
 <div class="container">
 
-    <h1>Game Arena</h1>
- <img
+    <img
         src="icon.png"
         alt="Game Arena"
         class="logo"
     >
+
+    <h1>Game Arena</h1>
+
     <p>
         12 classic puzzle, board and strategy games
         in one offline gaming app.
     </p>
 
-    <div class="buttons">
+    <div class="buttons hidden" id="downloadButtons">
 
         <a
-            id="iosButton"
             class="button"
             href="https://apps.apple.com/app/game-arena-offline-games/id6795797082">
             Download for iOS
         </a>
 
         <a
-            id="androidButton"
             class="button"
             href="https://play.google.com/store/apps/details?id=com.bhoyartech.tictactoe">
             Download for Android
@@ -118,7 +122,7 @@
     </div>
 
     <div class="loading" id="loadingMessage">
-        Detecting your device...
+        Opening Game Arena...
     </div>
 
 </div>
@@ -136,36 +140,58 @@
         navigator.vendor ||
         window.opera;
 
+    // Detect iPhone, iPad and iPod
     const isIOS =
-        /iPad|iPhone|iPod/.test(userAgent) ||
-        (navigator.platform === "MacIntel" &&
-         navigator.maxTouchPoints > 1);
+        /iPad|iPhone|iPod/i.test(userAgent) ||
+        (
+            navigator.platform === "MacIntel" &&
+            navigator.maxTouchPoints > 1
+        );
 
+    // Detect Android
     const isAndroid =
         /Android/i.test(userAgent);
 
+    const loadingMessage =
+        document.getElementById("loadingMessage");
+
+    const downloadButtons =
+        document.getElementById("downloadButtons");
+
+
+    /*
+     * iOS
+     */
     if (isIOS) {
 
-        document.getElementById("loadingMessage").textContent =
+        loadingMessage.textContent =
             "Opening App Store...";
 
-        setTimeout(function () {
-            window.location.href = iosURL;
-        }, 500);
+        window.location.replace(iosURL);
 
-    } else if (isAndroid) {
+    }
 
-        document.getElementById("loadingMessage").textContent =
+    /*
+     * Android
+     */
+    else if (isAndroid) {
+
+        loadingMessage.textContent =
             "Opening Google Play...";
 
-        setTimeout(function () {
-            window.location.href = androidURL;
-        }, 500);
+        window.location.replace(androidURL);
 
-    } else {
+    }
 
-        document.getElementById("loadingMessage").textContent =
+    /*
+     * Desktop / Unknown device
+     */
+    else {
+
+        loadingMessage.textContent =
             "Choose your platform to download Game Arena.";
+
+        downloadButtons.classList.remove("hidden");
 
     }
 
