@@ -1,246 +1,1622 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bhoyar Tech | Mobile App Developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="BhoyarTech develops reliable Android and iOS applications focused on quality, performance, and user experience.">
+    <title>Bhavesh Bhoyar | Senior iOS Engineer</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description"
+        content="Bhavesh Bhoyar is a Senior iOS Engineer with 10+ years of experience in native iOS development, Swift, SwiftUI, UIKit and React Native.">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="author" content="Bhavesh Bhoyar">
 
-<style>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-html{
-    scroll-behavior:smooth;
-}
 
-body{
-    font-family:'Inter',sans-serif;
-    background:#f5f7fb;
-    color:#1f2937;
-    line-height:1.7;
-}
+    <style>
 
-/* Hero */
+        /* =========================
+           RESET
+        ========================= */
 
-header{
-    background:linear-gradient(135deg,#2563eb,#4f46e5);
-    color:#fff;
-    padding:100px 20px;
-    text-align:center;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-header h1{
-    font-family:'Poppins',sans-serif;
-    font-size:60px;
-    margin-bottom:18px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-header p{
-    max-width:700px;
-    margin:auto;
-    font-size:21px;
-    opacity:.95;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f6f8fc;
+            color: #1f2937;
+            line-height: 1.7;
+        }
 
-.btn{
-    display:inline-block;
-    margin-top:35px;
-    padding:15px 34px;
-    background:#fff;
-    color:#2563eb;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
-}
+        h1,
+        h2,
+        h3 {
+            font-family: 'Poppins', sans-serif;
+        }
 
-.btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 35px rgba(0,0,0,.2);
-}
+        a {
+            text-decoration: none;
+        }
 
-/* Sections */
 
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:80px 20px;
-}
+        /* =========================
+           NAVIGATION
+        ========================= */
 
-.card{
-    background:#fff;
-    border-radius:20px;
-    padding:45px;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
 
-.card h2{
-    font-family:'Poppins',sans-serif;
-    font-size:34px;
-    margin-bottom:20px;
-    color:#111827;
-}
+            background: rgba(255, 255, 255, 0.95);
 
-.card p{
-    color:#555;
-    font-size:17px;
-}
+            backdrop-filter: blur(12px);
 
-/* Support */
+            border-bottom: 1px solid #e5e7eb;
+        }
 
-.support{
-    text-align:center;
-}
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
 
-.support h2{
-    font-family:'Poppins',sans-serif;
-    font-size:34px;
-    margin-bottom:20px;
-}
+            padding: 16px 20px;
 
-.support p{
-    color:#555;
-    font-size:18px;
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.email{
-    display:inline-block;
-    margin-top:30px;
-    background:#2563eb;
-    color:#fff;
-    padding:14px 24px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-}
+        .logo {
+            font-family: 'Poppins', sans-serif;
 
-.email:hover{
-    background:#1d4ed8;
-}
+            font-size: 21px;
 
-/* Footer */
+            font-weight: 700;
 
-footer{
-    background:#111827;
-    color:#fff;
-    padding:35px 20px;
-    text-align:center;
-}
+            color: #111827;
+        }
 
-footer a{
-    color:#93c5fd;
-    text-decoration:none;
-    margin:0 10px;
-}
+        .nav-links {
+            display: flex;
 
-footer a:hover{
-    text-decoration:underline;
-}
+            gap: 28px;
+        }
 
-/* Responsive */
+        .nav-links a {
+            color: #4b5563;
 
-@media(max-width:768px){
+            font-size: 14px;
 
-header h1{
-    font-size:42px;
-}
+            font-weight: 500;
 
-header p{
-    font-size:18px;
-}
+            transition: 0.25s;
+        }
 
-.card{
-    padding:30px;
-}
+        .nav-links a:hover {
+            color: #2563eb;
+        }
 
-}
 
-</style>
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(255, 255, 255, 0.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(255, 255, 255, 0.10),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #4f46e5
+                );
+
+            color: white;
+
+            padding: 120px 20px 110px;
+        }
+
+        .hero-container {
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 58px;
+
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #bfdbfe;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+
+            font-weight: 500;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            font-size: 17px;
+
+            opacity: 0.92;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 27px;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: white;
+
+            color: #2563eb;
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.18);
+        }
+
+
+        /* =========================
+           HERO CARD
+        ========================= */
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.1);
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            border-radius: 24px;
+
+            padding: 32px;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card h3 {
+            font-size: 20px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-stat {
+            padding: 15px 0;
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-stat:last-child {
+            border-bottom: none;
+        }
+
+        .hero-stat strong {
+            display: block;
+
+            font-size: 24px;
+        }
+
+        .hero-stat span {
+            font-size: 13px;
+
+            opacity: 0.8;
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        .container {
+            max-width: 1050px;
+
+            margin: auto;
+
+            padding: 85px 20px;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 36px;
+
+            color: #111827;
+
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #6b7280;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            display: grid;
+
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 45px;
+
+            align-items: stretch;
+        }
+
+        .about-card {
+            background: white;
+
+            border-radius: 22px;
+
+            padding: 40px;
+
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.06);
+        }
+
+        .about-card h3 {
+            font-size: 24px;
+
+            margin-bottom: 18px;
+        }
+
+        .about-card p {
+            color: #5b6472;
+
+            margin-bottom: 16px;
+        }
+
+        .highlight-list {
+            list-style: none;
+        }
+
+        .highlight-list li {
+            padding: 12px 0;
+
+            border-bottom:
+                1px solid #edf0f4;
+
+            color: #4b5563;
+        }
+
+        .highlight-list li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-list strong {
+            color: #111827;
+        }
+
+
+        /* =========================
+           TECHNICAL SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.05);
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            font-size: 19px;
+
+            margin-bottom: 12px;
+
+            color: #111827;
+        }
+
+        .skill-card p {
+            color: #667085;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           EXPERTISE
+        ========================= */
+
+        .expertise-section {
+            background: #111827;
+
+            color: white;
+        }
+
+        .expertise-section .section-heading h2 {
+            color: white;
+        }
+
+        .expertise-section .section-heading p {
+            color: #9ca3af;
+        }
+
+        .expertise-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .expertise {
+            border:
+                1px solid #273244;
+
+            border-radius: 16px;
+
+            padding: 24px;
+
+            transition: 0.3s;
+        }
+
+        .expertise:hover {
+            transform: translateY(-4px);
+
+            border-color: #4b5563;
+        }
+
+        .expertise h3 {
+            font-size: 17px;
+
+            margin-bottom: 8px;
+        }
+
+        .expertise p {
+            font-size: 13px;
+
+            color: #9ca3af;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            background: white;
+
+            padding: 30px 35px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.05);
+
+            border-left:
+                4px solid #2563eb;
+        }
+
+        .timeline-item h3 {
+            font-size: 22px;
+
+            margin-bottom: 5px;
+        }
+
+        .timeline-company {
+            color: #374151;
+
+            font-weight: 600;
+
+            margin-bottom: 3px;
+        }
+
+        .timeline-date {
+            color: #2563eb;
+
+            font-weight: 600;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+        .timeline-item p {
+            color: #5b6472;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
+        }
+
+        .education-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .education-card h3 {
+            font-size: 19px;
+
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #6b7280;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #4f46e5
+                );
+
+            color: white;
+
+            border-radius: 25px;
+
+            padding: 65px 30px;
+
+            text-align: center;
+        }
+
+        .contact-card h2 {
+            font-size: 36px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            max-width: 600px;
+
+            margin: auto;
+
+            opacity: 0.9;
+        }
+
+        .contact-email {
+            display: inline-block;
+
+            margin-top: 28px;
+
+            background: white;
+
+            color: #2563eb;
+
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #0b1120;
+
+            color: #9ca3af;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 46px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .expertise-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                position: relative;
+            }
+
+            .nav-container {
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .skills-grid,
+            .expertise-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 60px 20px;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+            .contact-card h2 {
+                font-size: 30px;
+            }
+
+            .about-card {
+                padding: 30px;
+            }
+
+            .timeline-item {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-<header>
 
-<h1>Bhoyar Tech</h1>
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
-<p>
-Building reliable, user-friendly Android and iOS applications with a focus on quality, performance, and simplicity.
-</p>
+    <nav>
 
-<a href="#support" class="btn">
-Contact Us
-</a>
+        <div class="nav-container">
 
-</header>
+            <div class="logo">
+                Bhavesh Bhoyar
+            </div>
 
-<section class="container">
+            <div class="nav-links">
 
-<div class="card">
+                <a href="#about">About</a>
 
-<h2>About BhoyarTech</h2>
+                <a href="#skills">Skills</a>
 
-<p>
-Bhoyar Tech is an independent mobile app development studio dedicated to building modern Android and iOS applications. Our mission is to create fast, intuitive, and reliable apps that enhance everyday life through thoughtful design and seamless user experiences.
-</p>
+                <a href="#expertise">Expertise</a>
 
-<br>
+                <a href="#experience">Experience</a>
 
-<p>
-We continuously improve our applications based on user feedback and are committed to delivering secure, high-quality software with regular updates and dependable support.
-</p>
+                <a href="#education">Education</a>
 
-</div>
+                <a href="#contact">Contact</a>
 
-</section>
+            </div>
 
-<section class="container" id="support">
+        </div>
 
-<div class="card support">
+    </nav>
 
-<h2>Support</h2>
 
-<p>
-Need assistance with one of our applications?<br>
-We're here to help.
-</p>
 
-<a class="email" href="mailto:appsupport.bhavesh@gmail.com">
-📧 appsupport.bhavesh@gmail.com
-</a>
+    <!-- =========================
+         HERO
+    ========================= -->
 
-<p style="margin-top:30px;">
-Typical response time: <strong>24–48 Hours</strong>
-</p>
+    <header class="hero">
 
-</div>
+        <div class="hero-container">
 
-</section>
 
-<footer>
+            <div class="hero-content">
 
-<p>
-© 2026 BhoyarTech. All Rights Reserved.
-</p>
+                <h1>
+                    Bhavesh <span>Bhoyar</span>
+                </h1>
 
-<br>
+                <div class="hero-subtitle">
+                    Senior iOS Engineer
+                </div>
 
-<a href="mailto:appsupport.bhavesh@gmail.com">Contact</a>
+                <p class="hero-description">
 
-</footer>
+                    I specialize in building reliable, high-performance
+                    mobile applications with a strong focus on clean
+                    architecture, thoughtful user experiences, and
+                    maintainable software.
+
+                </p>
+
+                <p
+                    class="hero-description"
+                    style="margin-top: 12px;">
+
+                    With 10+ years of native iOS development experience,
+                    I work with Swift, SwiftUI, UIKit, Objective-C,
+                    and React Native to build robust mobile solutions.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#contact"
+                        class="btn btn-primary">
+
+                        Get In Touch
+
+                    </a>
+
+
+                    <a
+                        href="#skills"
+                        class="btn btn-secondary">
+
+                        View Expertise
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <h3>
+                    At a Glance
+                </h3>
+
+
+                <div class="hero-stat">
+
+                    <strong>
+                        10+
+                    </strong>
+
+                    <span>
+                        Years of iOS Development
+                    </span>
+
+                </div>
+
+
+                <div class="hero-stat">
+
+                    <strong>
+                        Swift
+                    </strong>
+
+                    <span>
+                        SwiftUI & UIKit
+                    </span>
+
+                </div>
+
+
+                <div class="hero-stat">
+
+                    <strong>
+                        iOS + React Native
+                    </strong>
+
+                    <span>
+                        Native & Cross-Platform Development
+                    </span>
+
+                </div>
+
+
+                <div class="hero-stat">
+
+                    <strong>
+                        Clean Architecture
+                    </strong>
+
+                    <span>
+                        Scalable & Maintainable Software
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section
+        class="container"
+        id="about">
+
+
+        <div class="section-heading">
+
+            <h2>
+                About Me
+            </h2>
+
+            <p>
+                Experienced mobile engineer focused on building
+                quality software and great user experiences.
+            </p>
+
+        </div>
+
+
+        <div class="about">
+
+
+            <div class="about-card">
+
+                <h3>
+                    Mobile Developer & Problem Solver
+                </h3>
+
+
+                <p>
+
+                    I'm a Senior iOS Engineer with more than
+                    10 years of experience in end-to-end native
+                    iOS development — from requirements analysis
+                    and architecture design through development,
+                    testing, and App Store deployment.
+
+                </p>
+
+
+                <p>
+
+                    My core expertise includes Swift, SwiftUI,
+                    Objective-C, and UIKit. I also have experience
+                    with React Native and native module bridging
+                    for cross-platform applications.
+
+                </p>
+
+
+                <p>
+
+                    I focus on creating software that is reliable,
+                    performant, testable, maintainable, and easy
+                    to evolve.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>
+                    What I Bring
+                </h3>
+
+
+                <ul class="highlight-list">
+
+
+                    <li>
+
+                        <strong>
+                            Architecture
+                        </strong>
+
+                        <br>
+
+                        MVVM & VIP Clean Architecture
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>
+                            Engineering
+                        </strong>
+
+                        <br>
+
+                        SOLID, TDD & DDD principles
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>
+                            Performance
+                        </strong>
+
+                        <br>
+
+                        Profiling, optimization & memory management
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>
+                            Mobile Platforms
+                        </strong>
+
+                        <br>
+
+                        iOS, macOS, tvOS & watchOS
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>
+                            Cross Platform
+                        </strong>
+
+                        <br>
+
+                        React Native & native bridges
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TECHNICAL SKILLS
+    ========================= -->
+
+    <section
+        class="container"
+        id="skills">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Technical Skills
+            </h2>
+
+            <p>
+
+                Technologies, frameworks, and engineering practices
+                used throughout my mobile development experience.
+
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>
+                    iOS Development
+                </h3>
+
+                <p>
+
+                    Swift, SwiftUI, Objective-C, UIKit,
+                    Combine, Foundation, WatchKit,
+                    Core Animation
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Cross-Platform
+                </h3>
+
+                <p>
+
+                    React Native, TypeScript, JavaScript,
+                    Native Modules, iOS Bridge,
+                    React Navigation
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Architecture
+                </h3>
+
+                <p>
+
+                    MVVM, VIP Clean Architecture,
+                    SOLID Principles, TDD, DDD,
+                    Reactive Programming
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Data & Networking
+                </h3>
+
+                <p>
+
+                    RESTful APIs, SOAP APIs, URLSession,
+                    Core Data, SQLite, Firebase,
+                    WebSockets
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Testing
+                </h3>
+
+                <p>
+
+                    XCTest, XCUITest and
+                    Test-Driven Development
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    DevOps & Delivery
+                </h3>
+
+                <p>
+
+                    Xcode, Fastlane, Jenkins, Bitrise,
+                    CI/CD and App Store deployment
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Payment Integration
+                </h3>
+
+                <p>
+
+                    Apple Pay, Braintree and
+                    Square Mobile SDK
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Performance
+                </h3>
+
+                <p>
+
+                    Instruments, memory leak detection,
+                    CPU profiling, battery optimization
+                    and performance tuning
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Source Control
+                </h3>
+
+                <p>
+
+                    Git, Bitbucket, SVN, CocoaPods,
+                    Carthage and Swift Package Manager
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         AREAS OF EXPERTISE
+    ========================= -->
+
+    <section
+        class="expertise-section"
+        id="expertise">
+
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Areas of Expertise
+                </h2>
+
+                <p>
+
+                    Experience working on mobile solutions
+                    across a variety of industries and
+                    application domains.
+
+                </p>
+
+            </div>
+
+
+            <div class="expertise-grid">
+
+
+                <div class="expertise">
+
+                    <h3>
+                        FinTech
+                    </h3>
+
+                    <p>
+
+                        Financial applications,
+                        payment integrations and
+                        transaction workflows.
+
+                    </p>
+
+                </div>
+
+
+                <div class="expertise">
+
+                    <h3>
+                        Logistics
+                    </h3>
+
+                    <p>
+
+                        Shipment workflows,
+                        tracking and real-time
+                        mobile experiences.
+
+                    </p>
+
+                </div>
+
+
+                <div class="expertise">
+
+                    <h3>
+                        Construction
+                    </h3>
+
+                    <p>
+
+                        Field applications,
+                        offline-first solutions
+                        and workflow systems.
+
+                    </p>
+
+                </div>
+
+
+                <div class="expertise">
+
+                    <h3>
+                        Healthcare
+                    </h3>
+
+                    <p>
+
+                        Reliable mobile experiences
+                        focused on usability and data.
+
+                    </p>
+
+                </div>
+
+
+                <div class="expertise">
+
+                    <h3>
+                        Real Estate
+                    </h3>
+
+                    <p>
+
+                        Mobile business workflows
+                        and operational applications.
+
+                    </p>
+
+                </div>
+
+
+                <div class="expertise">
+
+                    <h3>
+                        Social & Chat
+                    </h3>
+
+                    <p>
+
+                        Communication-focused
+                        and real-time mobile experiences.
+
+                    </p>
+
+                </div>
+
+
+                <div class="expertise">
+
+                    <h3>
+                        E-Learning
+                    </h3>
+
+                    <p>
+
+                        Interactive mobile learning
+                        experiences and applications.
+
+                    </p>
+
+                </div>
+
+
+                <div class="expertise">
+
+                    <h3>
+                        Hardware Communication
+                    </h3>
+
+                    <p>
+
+                        Mobile applications that
+                        communicate with connected
+                        hardware systems.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================= -->
+
+    <section
+        class="container"
+        id="experience">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Professional Experience
+            </h2>
+
+            <p>
+
+                More than a decade of hands-on
+                mobile engineering experience.
+
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <h3>
+                    Senior iOS Engineer
+                </h3>
+
+                <div class="timeline-company">
+                    Aloha Technology Pvt. Ltd., Pune
+                </div>
+
+                <div class="timeline-date">
+                    May 2011 – Present
+                </div>
+
+
+                <p>
+
+                    End-to-end native iOS development covering
+                    requirements analysis, architecture,
+                    implementation, testing, performance
+                    optimization, CI/CD and App Store deployment.
+
+                </p>
+
+
+                <p style="margin-top: 15px;">
+
+                    Experienced in modernizing legacy Objective-C
+                    codebases, adopting Swift and SwiftUI,
+                    developing SDK integrations, building
+                    React Native bridges, optimizing application
+                    performance, and collaborating with
+                    cross-functional engineering teams.
+
+                </p>
+
+
+                <p style="margin-top: 15px;">
+
+                    Experienced across FinTech, Logistics,
+                    Construction, Healthcare, Real Estate,
+                    Social Media, Chat Applications,
+                    E-Learning, Automobile, Sports and
+                    hardware communication domains.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section
+        class="container"
+        id="education">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Education
+            </h2>
+
+        </div>
+
+
+        <div class="education-grid">
+
+
+            <div class="education-card">
+
+                <h3>
+                    Post Graduate Diploma in Advanced Computing
+                </h3>
+
+                <p>
+                    PG-DAC — CDAC IACSD, Pune
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Bachelor of Engineering
+                </h3>
+
+                <p>
+
+                    Electronics & Telecommunication
+
+                    <br>
+
+                    Amravati University, 2010
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section
+        class="container"
+        id="contact">
+
+
+        <div class="contact-card">
+
+
+            <h2>
+                Let's Connect
+            </h2>
+
+
+            <p>
+
+                Have a question, want to discuss mobile
+                development, or would like to get in touch?
+
+                I'd be happy to hear from you.
+
+            </p>
+
+
+            <a
+                class="contact-email"
+                href="mailto:appsupport.bhavesh@gmail.com">
+
+                📧 Get In Touch
+
+            </a>
+
+
+            <p
+                style="margin-top: 20px; font-size: 14px;">
+
+                Typical response time: 24–48 Hours
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026
+            <strong>
+                Bhavesh Bhoyar
+            </strong>.
+            All Rights Reserved.
+
+        </p>
+
+    </footer>
+
 
 </body>
+
 </html>
