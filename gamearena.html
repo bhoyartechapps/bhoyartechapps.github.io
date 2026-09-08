@@ -1,402 +1,615 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Game Arena brings 23 classic board, puzzle and arcade games into one offline app for iOS and Android. No account. No sign-up. Just play.">
+<meta name="description"
+      content="Game Arena brings 25 classic board, puzzle and arcade games into one offline app for iOS and Android. No account. No sign-up. Every game plays offline.">
 
-    <meta name="keywords"
-          content="Game Arena, offline games, board games, puzzle games, arcade games, iOS games, Android games">
+<meta name="keywords"
+      content="Game Arena, 25 offline games, board games, puzzle games, arcade games, chess, sudoku, ludo, solitaire, iOS games, Android games">
 
-    <meta name="theme-color"
-          content="#667eea">
+<meta name="theme-color"
+      content="#667eea">
 
-    <title>Game Arena - 23 Offline Games in One App</title>
+<title>Game Arena - 25 Offline Games in One App</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-        html,
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+        font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Arial,
+            sans-serif;
+
+        background:
+            linear-gradient(
+                135deg,
+                #667eea 0%,
+                #764ba2 100%
+            );
+
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 600px;
+        padding: 40px 25px;
+    }
+
+    .logo {
+        display: block;
+        width: 110px;
+        height: 110px;
+        margin: 0 auto 20px;
+
+        border-radius: 24px;
+        object-fit: cover;
+
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.20);
+    }
+
+    h1 {
+        margin: 0 0 8px;
+
+        font-size: 38px;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    .tagline {
+        margin: 0 0 18px;
+
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: 600;
+    }
+
+    .description {
+        max-width: 540px;
+        margin: 0 auto 25px;
+
+        font-size: 17px;
+        line-height: 1.6;
+
+        opacity: 0.92;
+    }
+
+    .features {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .feature {
+        padding: 9px 14px;
+
+        border-radius: 20px;
+
+        background: rgba(255, 255, 255, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 600;
+
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    .section {
+        margin: 35px 0 0;
+    }
+
+    .section-title {
+        margin: 0 0 14px;
+
+        font-size: 19px;
+        line-height: 1.3;
+        font-weight: 700;
+    }
+
+    .game-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+
+        max-width: 560px;
+        margin: 0 auto;
+    }
+
+    .game {
+        padding: 7px 11px;
+
+        border-radius: 15px;
+
+        background: rgba(255, 255, 255, 0.10);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+
+        font-size: 13px;
+        line-height: 1.2;
+
+        opacity: 0.9;
+    }
+
+    .highlight {
+        margin-top: 30px;
+        padding: 20px;
+
+        border-radius: 18px;
+
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+
+    .highlight-title {
+        margin: 0 0 10px;
+
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .highlight-text {
+        margin: 0;
+
+        font-size: 15px;
+        line-height: 1.6;
+
+        opacity: 0.9;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .button {
+        display: block;
+        width: 100%;
+
+        padding: 16px 20px;
+
+        border-radius: 13px;
+
+        background: #ffffff;
+        color: #333333;
+
+        text-decoration: none;
+
+        font-size: 17px;
+        line-height: 1.2;
+        font-weight: 600;
+
+        box-shadow:
+            0 6px 18px rgba(0, 0, 0, 0.15);
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 9px 22px rgba(0, 0, 0, 0.20);
+    }
+
+    .button:active {
+        transform: translateY(0);
+    }
+
+    .button:focus-visible {
+        outline: 3px solid rgba(255, 255, 255, 0.9);
+        outline-offset: 3px;
+    }
+
+    .loading {
+        margin-top: 25px;
+
+        font-size: 14px;
+        line-height: 1.5;
+
+        opacity: 0.8;
+    }
+
+    .footer {
+        margin-top: 28px;
+
+        font-size: 13px;
+        line-height: 1.6;
+
+        opacity: 0.7;
+    }
+
+    .buttons.hidden,
+    .content.hidden {
+        display: none;
+    }
+
+    @media (max-width: 480px) {
+
         body {
-            margin: 0;
-            width: 100%;
-            min-height: 100%;
-        }
-
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Arial,
-                sans-serif;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #667eea 0%,
-                    #764ba2 100%
-                );
-
-            color: #ffffff;
-            text-align: center;
+            padding: 15px;
         }
 
         .container {
-            width: 100%;
-            max-width: 560px;
-            padding: 40px 25px;
+            padding: 25px 15px;
         }
 
         .logo {
-            display: block;
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 20px;
-
-            border-radius: 24px;
-            object-fit: cover;
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.20);
+            width: 95px;
+            height: 95px;
+            margin-bottom: 18px;
+            border-radius: 21px;
         }
 
         h1 {
-            margin: 0 0 8px;
-
-            font-size: 36px;
-            line-height: 1.2;
-            font-weight: 700;
+            font-size: 31px;
         }
 
         .tagline {
-            margin: 0 0 18px;
-
-            font-size: 21px;
-            line-height: 1.4;
-            font-weight: 600;
+            font-size: 19px;
         }
 
         .description {
-            max-width: 500px;
-            margin: 0 auto 25px;
-
-            font-size: 17px;
-            line-height: 1.6;
-
-            opacity: 0.92;
-        }
-
-        .features {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            gap: 10px;
-            margin-bottom: 30px;
+            font-size: 16px;
         }
 
         .feature {
-            padding: 9px 14px;
-
-            border-radius: 20px;
-
-            background: rgba(255, 255, 255, 0.16);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-
-            font-size: 14px;
-            line-height: 1.2;
-            font-weight: 600;
-
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
+            padding: 8px 12px;
+            font-size: 13px;
         }
 
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
+        .section-title {
+            font-size: 18px;
+        }
 
-            width: 100%;
+        .game {
+            padding: 7px 9px;
+            font-size: 12px;
         }
 
         .button {
-            display: block;
-            width: 100%;
-
-            padding: 16px 20px;
-
-            border-radius: 13px;
-
-            background: #ffffff;
-            color: #333333;
-
-            text-decoration: none;
-
-            font-size: 17px;
-            line-height: 1.2;
-            font-weight: 600;
-
-            box-shadow:
-                0 6px 18px rgba(0, 0, 0, 0.15);
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
+            padding: 15px 18px;
+            font-size: 16px;
         }
+    }
 
-        .button:hover {
-            transform: translateY(-2px);
+    @media (prefers-reduced-motion: reduce) {
 
-            box-shadow:
-                0 9px 22px rgba(0, 0, 0, 0.20);
+        .button {
+            transition: none;
         }
+    }
+</style>
+```
 
-        .button:active {
-            transform: translateY(0);
-        }
-
-        .button:focus-visible {
-            outline: 3px solid rgba(255, 255, 255, 0.9);
-            outline-offset: 3px;
-        }
-
-        .loading {
-            margin-top: 25px;
-
-            font-size: 14px;
-            line-height: 1.5;
-
-            opacity: 0.8;
-        }
-
-        .footer {
-            margin-top: 28px;
-
-            font-size: 13px;
-            line-height: 1.5;
-
-            opacity: 0.7;
-        }
-
-        .buttons.hidden {
-            display: none;
-        }
-
-        @media (max-width: 480px) {
-
-            body {
-                padding: 15px;
-            }
-
-            .container {
-                padding: 25px 15px;
-            }
-
-            .logo {
-                width: 95px;
-                height: 95px;
-                margin-bottom: 18px;
-                border-radius: 21px;
-            }
-
-            h1 {
-                font-size: 31px;
-            }
-
-            .tagline {
-                font-size: 19px;
-            }
-
-            .description {
-                font-size: 16px;
-            }
-
-            .feature {
-                padding: 8px 12px;
-                font-size: 13px;
-            }
-
-            .button {
-                padding: 15px 18px;
-                font-size: 16px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            .button {
-                transition: none;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <main class="container">
+```
+<main class="container">
 
-<img src="NewIcon.png" alt="Game Arena" class="logo" >
+    <img
+        src="NewIcon.png"
+        alt="Game Arena"
+        class="logo"
+    >
 
-        <h1>Game Arena</h1>
+    <h1>Game Arena</h1>
 
-        <div class="tagline">
-            23 games. One app.
+    <div class="tagline">
+        25 games. One app.
+    </div>
+
+    <p class="description">
+        Play the board, puzzle and arcade games you already know —
+        all in one tidy offline app. No account, no sign-up,
+        and every game plays offline.
+    </p>
+
+    <div class="features" aria-label="Game Arena features">
+
+        <div class="feature">
+            🎮 25 Games
         </div>
 
-        <p class="description">
-            Play the board, puzzle and arcade games you already know
-            — all in one tidy offline app. No account, no sign-up,
-            and no internet required to play.
+        <div class="feature">
+            📱 Play Offline
+        </div>
+
+        <div class="feature">
+            🚫 No Account
+        </div>
+
+        <div class="feature">
+            🏆 Track Everything
+        </div>
+
+        <div class="feature">
+            💾 Auto Save
+        </div>
+
+        <div class="feature">
+            🏅 37 Achievements
+        </div>
+
+    </div>
+
+    <div class="highlight">
+
+        <div class="highlight-title">
+            Pick up where you left off
+        </div>
+
+        <p class="highlight-text">
+            Half-solved Sudoku, a Mahjong board or a Ludo game
+            mid-race? Your interrupted games are saved automatically,
+            so you can continue right where you stopped.
         </p>
 
-        <div class="features" aria-label="Game Arena features">
+    </div>
 
-            <div class="feature">
-                🎮 23 Games
-            </div>
+    <section class="section">
 
-            <div class="feature">
-                📱 Play Offline
-            </div>
+        <h2 class="section-title">
+            🎯 Strategy
+        </h2>
 
-            <div class="feature">
-                🚫 No Account
-            </div>
+        <div class="game-list">
 
-            <div class="feature">
-                🏆 Track Your Scores
-            </div>
+            <span class="game">Chess</span>
+            <span class="game">Checkers</span>
+            <span class="game">Connect Four</span>
+            <span class="game">Gomoku</span>
+            <span class="game">Reversi</span>
+            <span class="game">Dots &amp; Boxes</span>
+            <span class="game">Carrom</span>
 
         </div>
 
-        <div
-            class="buttons hidden"
-            id="downloadButtons"
+    </section>
+
+    <section class="section">
+
+        <h2 class="section-title">
+            🧩 Puzzle
+        </h2>
+
+        <div class="game-list">
+
+            <span class="game">Sudoku</span>
+            <span class="game">Mahjong</span>
+            <span class="game">Minesweeper</span>
+            <span class="game">Num Puzzle</span>
+            <span class="game">Water Sort</span>
+            <span class="game">Sweet Swap</span>
+            <span class="game">Parking Jam</span>
+            <span class="game">Sliding Puzzle</span>
+            <span class="game">Memory Match</span>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2 class="section-title">
+            🕹️ Classic &amp; Arcade
+        </h2>
+
+        <div class="game-list">
+
+            <span class="game">Solitaire</span>
+            <span class="game">Tic Tac Toe</span>
+            <span class="game">Ludo</span>
+            <span class="game">Snake &amp; Ladder</span>
+            <span class="game">Snake</span>
+            <span class="game">Brick Breaker</span>
+            <span class="game">Sky Hop</span>
+            <span class="game">Ball Race</span>
+            <span class="game">Dice</span>
+
+        </div>
+
+    </section>
+
+    <div class="highlight">
+
+        <div class="highlight-title">
+            🎮 Play your way
+        </div>
+
+        <p class="highlight-text">
+            Play against AI, challenge a friend with pass-and-play,
+            or play solo and chase your personal best.
+            Difficulty levels and game modes give you plenty of
+            ways to play.
+        </p>
+
+    </div>
+
+    <div class="highlight">
+
+        <div class="highlight-title">
+            🏆 Track everything
+        </div>
+
+        <p class="highlight-text">
+            Games played, wins, losses, draws, best scores,
+            fastest wins and time played — per game and overall.
+            Build your daily streak and unlock 37 achievements.
+        </p>
+
+    </div>
+
+    <div class="highlight">
+
+        <div class="highlight-title">
+            ✨ Made to look good
+        </div>
+
+        <p class="highlight-text">
+            Choose between light and dark themes, five colour
+            palettes, and optional sound and haptics.
+            Clean Material design keeps the focus on the game.
+        </p>
+
+    </div>
+
+    <div
+        class="buttons hidden"
+        id="downloadButtons"
+    >
+
+        <a
+            class="button"
+            id="iosButton"
+            href="https://apps.apple.com/app/game-arena-offline-games/id6795797082"
         >
+            Download for iOS
+        </a>
 
-            <a
-                class="button"
-                id="iosButton"
-                href="https://apps.apple.com/app/game-arena-offline-games/id6795797082"
-            >
-                Download for iOS
-            </a>
-
-            <a
-                class="button"
-                id="androidButton"
-                href="https://play.google.com/store/apps/details?id=com.bhoyartech.tictactoe"
-            >
-                Download for Android
-            </a>
-
-        </div>
-
-        <div
-            class="loading"
-            id="loadingMessage"
-            aria-live="polite"
+        <a
+            class="button"
+            id="androidButton"
+            href="https://play.google.com/store/apps/details?id=com.bhoyartech.tictactoe"
         >
-            Opening Game Arena...
-        </div>
+            Download for Android
+        </a>
 
-        <div class="footer">
-            Free to play · Supported by ads · Offline gaming
-        </div>
+    </div>
 
-    </main>
+    <div
+        class="loading"
+        id="loadingMessage"
+        aria-live="polite"
+    >
+        Opening Game Arena...
+    </div>
 
-    <script>
-        (function () {
+    <div class="footer">
+        Free to play · Supported by ads · Hints are optional ·
+        No internet required
+    </div>
 
-            const iosURL =
-                "https://apps.apple.com/app/game-arena-offline-games/id6795797082";
+</main>
 
-            const androidURL =
-                "https://play.google.com/store/apps/details?id=com.bhoyartech.tictactoe";
+<script>
+    (function () {
 
-            const loadingMessage =
-                document.getElementById("loadingMessage");
+        const iosURL =
+            "https://apps.apple.com/app/game-arena-offline-games/id6795797082";
 
-            const downloadButtons =
-                document.getElementById("downloadButtons");
+        const androidURL =
+            "https://play.google.com/store/apps/details?id=com.bhoyartech.tictactoe";
 
-            const userAgent =
-                navigator.userAgent ||
-                navigator.vendor ||
-                window.opera ||
-                "";
+        const loadingMessage =
+            document.getElementById("loadingMessage");
 
-            /*
-             * Detect iOS devices.
-             *
-             * The MacIntel + touch-point check handles
-             * newer iPads that may identify themselves as Mac.
-             */
-            const isIOS =
-                /iPad|iPhone|iPod/i.test(userAgent) ||
-                (
-                    navigator.platform === "MacIntel" &&
-                    navigator.maxTouchPoints > 1
-                );
+        const downloadButtons =
+            document.getElementById("downloadButtons");
 
-            /*
-             * Detect Android devices.
-             */
-            const isAndroid =
-                /Android/i.test(userAgent);
+        const userAgent =
+            navigator.userAgent ||
+            navigator.vendor ||
+            window.opera ||
+            "";
 
-            /*
-             * iOS
-             */
-            if (isIOS) {
+        /*
+         * Detect iOS devices.
+         *
+         * The MacIntel + touch-point check handles
+         * newer iPads that may identify themselves as Mac.
+         */
+        const isIOS =
+            /iPad|iPhone|iPod/i.test(userAgent) ||
+            (
+                navigator.platform === "MacIntel" &&
+                navigator.maxTouchPoints > 1
+            );
 
-                loadingMessage.textContent =
-                    "Opening App Store...";
+        /*
+         * Detect Android devices.
+         */
+        const isAndroid =
+            /Android/i.test(userAgent);
 
-                window.location.replace(iosURL);
+        /*
+         * iOS
+         */
+        if (isIOS) {
 
-                return;
-            }
-
-            /*
-             * Android
-             */
-            if (isAndroid) {
-
-                loadingMessage.textContent =
-                    "Opening Google Play...";
-
-                window.location.replace(androidURL);
-
-                return;
-            }
-
-            /*
-             * Desktop / unknown device
-             */
             loadingMessage.textContent =
-                "Choose your platform to download Game Arena.";
+                "Opening App Store...";
 
-            downloadButtons.classList.remove("hidden");
+            window.location.replace(iosURL);
 
-        })();
-    </script>
+            return;
+        }
+
+        /*
+         * Android
+         */
+        if (isAndroid) {
+
+            loadingMessage.textContent =
+                "Opening Google Play...";
+
+            window.location.replace(androidURL);
+
+            return;
+        }
+
+        /*
+         * Desktop / unknown device
+         */
+        loadingMessage.textContent =
+            "Choose your platform to download Game Arena.";
+
+        downloadButtons.classList.remove("hidden");
+
+    })();
+</script>
 
 </body>
 </html>
-
